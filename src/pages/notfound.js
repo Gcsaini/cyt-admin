@@ -10,7 +10,7 @@ export default function NotFoundPage() {
           <i className="fa fa-warning"></i> Oops! Page not found!
         </h3>
         <p className="h4 fw-medium">The page you requested was not found.</p>
-        <a href="index.html" className="btn btn-primary">
+        <a href={() => navigate("/")} className="btn btn-primary">
           Back to Home
         </a>
       </div>

@@ -15,7 +15,7 @@ export default function Header() {
         </a>
       </div>
 
-      <a href="" id="toggle_btn">
+      <a href="/toggle" id="toggle_btn">
         <i className="fe fe-text-align-left"></i>
       </a>
       <div className="top-nav-search">
@@ -31,14 +31,14 @@ export default function Header() {
         </form>
       </div>
 
-      <a className="mobile_btn" id="mobile_btn">
+      <a className="mobile_btn" id="mobile_btn" href="/mobile">
         <i className="fa fa-bars"></i>
       </a>
 
       <ul className="nav user-menu">
         <li className="nav-item dropdown noti-dropdown">
           <a
-            href="#"
+            href="/dropdown"
             className="dropdown-toggle nav-link"
             data-bs-toggle="dropdown"
           >
@@ -48,7 +48,7 @@ export default function Header() {
           <div className="dropdown-menu notifications">
             <div className="topnav-dropdown-header">
               <span className="notification-title">Notifications</span>
-              <a href="" className="clear-noti">
+              <a href="/clear-all" className="clear-noti">
                 {" "}
                 Clear All{" "}
               </a>
@@ -56,7 +56,7 @@ export default function Header() {
             <div className="noti-content">
               <ul className="notification-list">
                 <li className="notification-message">
-                  <a href="#">
+                  <a href="/profile">
                     <div className="notify-block d-flex">
                       <span className="avatar avatar-sm flex-shrink-0">
                         <LazyImage
@@ -79,7 +79,7 @@ export default function Header() {
                   </a>
                 </li>
                 <li className="notification-message">
-                  <a href="#">
+                  <a href="/profile">
                     <div className="notify-block d-flex">
                       <span className="avatar avatar-sm flex-shrink-0">
                         <LazyImage
@@ -102,7 +102,7 @@ export default function Header() {
                   </a>
                 </li>
                 <li className="notification-message">
-                  <a href="#">
+                  <a href="/profile">
                     <div className="notify-block d-flex">
                       <span className="avatar avatar-sm flex-shrink-0">
                         <LazyImage
@@ -125,7 +125,7 @@ export default function Header() {
                   </a>
                 </li>
                 <li className="notification-message">
-                  <a href="#">
+                  <a href="/profile">
                     <div className="notify-block d-flex">
                       <span className="avatar avatar-sm flex-shrink-0">
                         <LazyImage
@@ -150,14 +150,14 @@ export default function Header() {
               </ul>
             </div>
             <div className="topnav-dropdown-footer">
-              <a href="#">View all Notifications</a>
+              <a href="/view-all">View all Notifications</a>
             </div>
           </div>
         </li>
 
         <li className="nav-item dropdown has-arrow">
           <a
-            href="#"
+            href="/profile"
             className="dropdown-toggle nav-link"
             data-bs-toggle="dropdown"
           >

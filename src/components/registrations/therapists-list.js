@@ -7,7 +7,7 @@ import {
 import axios from "axios";
 import { getMode } from "../../helpers/get-mode";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { truncateString } from "../../helpers/string-concate";
@@ -129,7 +129,7 @@ export default function TherapistLists() {
                               <tr key={item._id}>
                                 <td>
                                   <h2 className="table-avatar">
-                                    <a href="#">{item.name} </a>
+                                    <a href="/details">{item.name} </a>
                                   </h2>
                                   <p>{item.email}</p>
                                 </td>
@@ -149,19 +149,19 @@ export default function TherapistLists() {
                                   <span
                                     style={{
                                       color:
-                                        item.is_mail_sent == 1
+                                        item.is_mail_sent === 1
                                           ? "#28a745"
                                           : "#dc3545",
                                     }}
                                   >
-                                    {item.is_mail_sent == 1 ? "Sent" : "No"}
+                                    {item.is_mail_sent === 1 ? "Sent" : "No"}
                                   </span>
 
                                   <div
                                     style={{ cursor: "pointer" }}
                                     onClick={() => sendMail(item._id)}
                                   >
-                                    {loading && loadingId == item._id
+                                    {loading && loadingId === item._id
                                       ? "Sending..."
                                       : "Send Mail"}
                                   </div>

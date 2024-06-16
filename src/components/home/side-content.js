@@ -145,7 +145,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-01.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Ruby Perrin</a>
@@ -171,7 +171,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-02.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Darren Elder</a>
@@ -197,7 +197,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-03.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Deborah Angel</a>
@@ -223,7 +223,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-04.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Sofia Brient</a>
@@ -249,7 +249,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-05.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Marvin Campbell</a>
@@ -298,7 +298,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient1.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Charlene Reed </a>
@@ -318,7 +318,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient2.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Travis Trimble </a>
@@ -338,7 +338,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient3.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Carl Kelly</a>
@@ -358,7 +358,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient4.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html"> Michelle Fairfax</a>
@@ -378,7 +378,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient5.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Gina Moore</a>
@@ -425,7 +425,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-01.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Ruby Perrin</a>
@@ -441,7 +441,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient1.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Charlene Reed </a>
@@ -478,7 +478,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-02.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Darren Elder</a>
@@ -494,7 +494,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient2.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Travis Trimble </a>
@@ -531,7 +531,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-03.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Deborah Angel</a>
@@ -547,7 +547,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient3.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Carl Kelly</a>
@@ -584,7 +584,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-04.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Sofia Brient</a>
@@ -600,7 +600,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient4.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html"> Michelle Fairfax</a>
@@ -637,7 +637,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/doctors/doctor-thumb-05.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Dr. Marvin Campbell</a>
@@ -653,7 +653,7 @@ export default function SideContent() {
                               <img
                                 className="avatar-img rounded-circle"
                                 src="assets/img/patients/patient5.jpg"
-                                alt="User Image"
+                                alt="User"
                               />
                             </a>
                             <a href="profile.html">Gina Moore</a>
