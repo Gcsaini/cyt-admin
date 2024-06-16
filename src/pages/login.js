@@ -37,20 +37,6 @@ export default function Login() {
                 <div className="text-center forgotpass">
                   <a href="forgot-password.html">Forgot Password?</a>
                 </div>
-                <div className="login-or">
-                  <span className="or-line"></span>
-                  <span className="span-or">or</span>
-                </div>
-
-                <div className="social-login">
-                  <span>Login with</span>
-                  <a href="#" className="facebook">
-                    <i className="fa-brands fa-facebook-f"></i>
-                  </a>
-                  <a href="#" className="google">
-                    <i className="fa-brands fa-google"></i>
-                  </a>
-                </div>
 
                 <div className="text-center dont-have">
                   Don’t have an account? <a href="register.html">Register</a>
