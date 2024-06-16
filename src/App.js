@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./index.css";
+import "./bootstrap.css";
+import { Route, Routes } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Login from "./pages/login";
+import NotFoundPage from "./pages/notfound";
+import Home from "./pages/home";
+import Registration from "./pages/registration";
+
+const theme = createTheme();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <div className="offcanvas-overlay"></div>
+        <div className="main-wrapper">
+          {/* <Nav /> */}
+          <Routes>
+            <Route path="*" element={<NotFoundPage />} />
+            <Route path="admin/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/registrations" element={<Registration />} />
+          </Routes>
+        </div>
+      </>
+    </ThemeProvider>
   );
 }
 
