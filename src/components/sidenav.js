@@ -1,4 +1,9 @@
+import { useNavigate } from "react-router-dom";
 export default function SideNav() {
+  const navigate = useNavigate();
+  function handleClick(nav) {
+    navigate(nav);
+  }
   return (
     <div className="sidebar" id="sidebar">
       <div className="sidebar-inner slimscroll">
@@ -13,8 +18,13 @@ export default function SideNav() {
               </a>
             </li>
             <li>
-              <a href="appointment-list.html">
-                <i className="fe fe-layout"></i> <span>Appointments</span>
+              <a
+                href="#"
+                onClick={() => {
+                  handleClick("/registrations");
+                }}
+              >
+                <i className="fe fe-layout"></i> <span>Registrations</span>
               </a>
             </li>
             <li>
@@ -57,14 +67,6 @@ export default function SideNav() {
                   <a href="invoice-report.html">Invoice Reports</a>
                 </li>
               </ul>
-            </li>
-            <li className="menu-title">
-              <span>Pages</span>
-            </li>
-            <li>
-              <a href="profile.html">
-                <i className="fe fe-user-plus"></i> <span>Profile</span>
-              </a>
             </li>
           </ul>
         </div>

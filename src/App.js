@@ -17,9 +17,10 @@ function App() {
         <div className="offcanvas-overlay"></div>
         <div className="main-wrapper">
           <Routes>
-            <Route path="/admin/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/registrations" element={<Registration />} />
+            <Route exact path="/" element={<Login />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/registrations" element={<Registration />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
