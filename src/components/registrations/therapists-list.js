@@ -62,6 +62,7 @@ export default function TherapistLists() {
       const response = await axios.get(`${sendAproveMail}/${id}`);
       if (response.data.status) {
         setSuccess("Mail has been sent");
+        getData();
       } else {
         setError("Error to send mail.Please contact your CTO");
       }
@@ -77,6 +78,7 @@ export default function TherapistLists() {
       const response = await axios.get(`${aprovedTherapist}/${id}`);
       if (response.data.status) {
         setSuccess("Profile aproved");
+        getData();
       } else {
         setError("Error to aproved Account.Please contact your CTO");
       }
@@ -111,11 +113,11 @@ export default function TherapistLists() {
                     <table className="datatable table table-hover table-center mb-0">
                       <thead>
                         <tr>
-                          <th>Name</th>
-
+                          <th>Name/Email</th>
                           <th>Phone</th>
                           <th>Serve Type</th>
                           <th>Profile Type</th>
+                          <th>Resume</th>
                           <th>Mode</th>
                           <th>Mail Sent?</th>
                           <th>Aproved?</th>
@@ -133,7 +135,6 @@ export default function TherapistLists() {
                                   </h2>
                                   <p>{item.email}</p>
                                 </td>
-
                                 <td>{item.phone}</td>
                                 <td>
                                   <div
@@ -144,6 +145,11 @@ export default function TherapistLists() {
                                   </div>
                                 </td>
                                 <td>{item.profile_type}</td>
+                                <td>
+                                  <a href={item.resume} target="_blank">
+                                    View
+                                  </a>
+                                </td>
                                 <td>{getMode(item.mode)}</td>
                                 <td>
                                   <span
