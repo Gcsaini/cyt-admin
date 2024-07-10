@@ -7,7 +7,7 @@ import Login from "./pages/login";
 import NotFoundPage from "./pages/notfound";
 import Home from "./pages/home";
 import Registration from "./pages/registration";
-// theme has some issue
+
 const theme = createTheme();
 
 function App() {

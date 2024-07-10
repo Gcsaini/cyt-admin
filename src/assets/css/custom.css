@@ -1327,6 +1327,30 @@ html.menu-opened body {
   }
 }
 
+.submenu ul {
+  /* border-bottom: none; */
+}
+
+.submenu ul li {
+  background-color: #3eb75e;
+}
+
+.submenu ul li a {
+  text-decoration: none;
+  color: inherit;
+  /* background-color: red; */
+}
+
+.submenu ul li:hover {
+  color: black;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.submenu.open ul {
+  display: block;
+}
+
 .table {
   color: #333333;
   max-width: 100%;
@@ -2545,7 +2569,6 @@ button.bg-danger:hover {
   color: #5ae8ff;
 }
 .sidebar-menu ul li.active a {
-  background-color: #00d0f1;
   color: #fff;
 }
 .sidebar-menu ul ul a.active {
@@ -2553,12 +2576,12 @@ button.bg-danger:hover {
   text-decoration: underline;
 }
 .sidebar-menu > ul > li > a:hover {
-  background-color: #19c1dc;
-  color: #ffffff;
+  background-color: #fff;
+  color: black;
 }
 .sidebar-menu > ul > li.active > a:hover {
-  background-color: #19c1dc;
-  color: #ffffff;
+  background-color: #fff;
+  color: black;
 }
 
 .menu-title {

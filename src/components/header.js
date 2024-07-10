@@ -1,9 +1,11 @@
 import LogoImg from "../../src/assets/img/logo.png";
+import SmallLogoImg from "../assets/img/logo-small.png";
 import DoctorThumb from "../img/doctors/doctor-thumb-01.jpg";
 import PatientImg from "../img/patients/patient1.jpg";
 import Avatar from "../img/profiles/avatar-01.jpg";
 import LazyImage from "../helpers/lazy-image";
 import "../../src/assets/css/custom.css";
+
 export default function Header() {
   return (
     <div class="header">
@@ -12,12 +14,7 @@ export default function Header() {
           <img src={LogoImg} alt="Logo" />
         </a>
         <a href="index.html" class="logo logo-small">
-          <img
-            src="assets/img/logo-small.png"
-            alt="Logo"
-            width="30"
-            height="30"
-          />
+          <img src={SmallLogoImg} alt="Logo" width="30" height="30" />
         </a>
       </div>
 

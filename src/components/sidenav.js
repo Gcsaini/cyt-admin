@@ -1,12 +1,19 @@
+import { React } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../src/assets/css/custom.css";
-import {Scriptfile} from "../../src/assets/js/script.js";
+import { useState } from "react";
 
 export default function SideNav() {
   const navigate = useNavigate();
 
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+
   function handleDashboard(nav) {
     navigate(nav);
+  }
+
+  function toggleRegistrationDropdown() {
+    setIsRegistrationOpen(!isRegistrationOpen);
   }
   return (
     <>
@@ -17,17 +24,21 @@ export default function SideNav() {
               <li className="menu-title">
                 <span>Main</span>
               </li>
-              <li className="active">
+              <li>
                 <a href="#" onClick={() => handleDashboard("/home")}>
                   <i className="fe fe-home"></i> <span>Dashboard</span>
                 </a>
               </li>
-              <li className="submenu">
-                <a href="#">
+              <li className={`submenu ${isRegistrationOpen ? "open" : ""}`}>
+                <a href="#" onClick={toggleRegistrationDropdown}>
                   <i className="fe fe-layout"></i> <span> Registration</span>{" "}
                   <span className="menu-arrow"></span>
                 </a>
-                <ul style={{ display: "none" }}>
+                <ul
+                  style={{
+                    display: isRegistrationOpen ? "block" : "none"
+                  }}
+                >
                   <li>
                     <a href="#">Client</a>
                   </li>
@@ -65,7 +76,6 @@ export default function SideNav() {
           </div>
         </div>
       </div>
-      <script src={Scriptfile}></script>
     </>
   );
 }
