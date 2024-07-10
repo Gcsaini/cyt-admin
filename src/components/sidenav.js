@@ -15,6 +15,14 @@ export default function SideNav() {
   function toggleRegistrationDropdown() {
     setIsRegistrationOpen(!isRegistrationOpen);
   }
+
+  const handletherapist = () => {
+    navigate("/therapist");
+  };
+
+  const handleAppointment = () => {
+    navigate("/appointment");
+  };
   return (
     <>
       <div className="sidebar" id="sidebar">
@@ -48,7 +56,7 @@ export default function SideNav() {
                 </ul>
               </li>
               <li>
-                <a href="specialities.html">
+                <a onClick={handletherapist}>
                   <i className="fe fe-users"></i> <span>Therapists</span>
                 </a>
               </li>
@@ -58,7 +66,7 @@ export default function SideNav() {
                 </a>
               </li>
               <li>
-                <a href="patient-list.html">
+                <a onClick={handleAppointment}>
                   <i className="fe fe-user"></i> <span>Appointments</span>
                 </a>
               </li>
@@ -73,17 +81,17 @@ export default function SideNav() {
                 </a>
               </li>
               <li>
-                <a href="transactions-list.html">
+                <a href="plans.html">
                   <i className="fas fa-tasks"></i> <span>Plans</span>
                 </a>
               </li>
               <li>
-                <a href="transactions-list.html">
+                <a href="blogs.html">
                   <i className="fa-solid fa-blog"></i> <span>Blogs</span>
                 </a>
               </li>
               <li>
-                <a href="transactions-list.html">
+                <a href="courses.html">
                   <i className="fa-solid fa-user-graduate"></i>
                   <span>Courses</span>
                 </a>
