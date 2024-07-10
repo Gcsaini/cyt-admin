@@ -72,6 +72,22 @@ export default function SideNav() {
                   <i className="fe fe-activity"></i> <span>Invoices</span>
                 </a>
               </li>
+              <li>
+                <a href="transactions-list.html">
+                  <i className="fas fa-tasks"></i> <span>Plans</span>
+                </a>
+              </li>
+              <li>
+                <a href="transactions-list.html">
+                  <i className="fa-solid fa-blog"></i> <span>Blogs</span>
+                </a>
+              </li>
+              <li>
+                <a href="transactions-list.html">
+                  <i className="fa-solid fa-user-graduate"></i>
+                  <span>Courses</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
