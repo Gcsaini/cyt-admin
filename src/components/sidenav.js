@@ -1,27 +1,11 @@
 import { React } from "react";
-import { useNavigate } from "react-router-dom";
-import "../../src/assets/css/custom.css";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function SideNav() {
-  const navigate = useNavigate();
+  const location = useLocation();
 
-  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
-
-  function handleDashboard(nav) {
-    navigate(nav);
-  }
-
-  function toggleRegistrationDropdown() {
-    setIsRegistrationOpen(!isRegistrationOpen);
-  }
-
-  const handletherapist = () => {
-    navigate("/therapist");
-  };
-
-  const handleAppointment = () => {
-    navigate("/appointment");
+  const isActive = (path) => {
+    return location.pathname === path ? "active" : "";
   };
   return (
     <>
@@ -32,69 +16,67 @@ export default function SideNav() {
               <li className="menu-title">
                 <span>Main</span>
               </li>
-              <li>
-                <a href="#" onClick={() => handleDashboard("/home")}>
+              <li className={isActive("/home")}>
+                <Link to="/home">
                   <i className="fe fe-home"></i> <span>Dashboard</span>
-                </a>
+                </Link>
               </li>
-              <li className={`submenu ${isRegistrationOpen ? "open" : ""}`}>
-                <a href="#" onClick={toggleRegistrationDropdown}>
-                  <i className="fe fe-layout"></i> <span> Registration</span>{" "}
+              
+              <li className="submenu">
+                <Link>
+                  <i className="fe fe-document"></i> <span> Registraion</span>{" "}
                   <span className="menu-arrow"></span>
-                </a>
-                <ul
-                  style={{
-                    display: isRegistrationOpen ? "block" : "none"
-                  }}
-                >
+                </Link>
+                <ul style={{ display: "none" }}>
                   <li>
-                    <a href="#">Client</a>
+                    <Link to={""}>Client</Link>
                   </li>
                   <li>
-                    <a href="#">Therapist</a>
+                    <Link to={""}>Therapist</Link>
                   </li>
                 </ul>
               </li>
+
               <li>
-                <a onClick={handletherapist}>
+                <Link to={"/therapist"} className={isActive("/therapist")}>
                   <i className="fe fe-users"></i> <span>Therapists</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="doctor-list.html">
+                <Link to={"/client"}>
                   <i className="fe fe-user-plus"></i> <span>Clients</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a onClick={handleAppointment}>
+                <Link to={"/appointment"}>
                   <i className="fe fe-user"></i> <span>Appointments</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="reviews.html">
+                <Link to={"/reviews"}>
                   <i className="fe fe-star-o"></i> <span>Reviews</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="transactions-list.html">
+                <Link to={"/invoices"}>
                   <i className="fe fe-activity"></i> <span>Invoices</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="plans.html">
+                <Link to={"/plans"}>
                   <i className="fas fa-tasks"></i> <span>Plans</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="blogs.html">
+                <Link to={"/blogs"}>
                   <i className="fa-solid fa-blog"></i> <span>Blogs</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="courses.html">
+                <Link to={"/courses"}>
                   <i className="fa-solid fa-user-graduate"></i>
                   <span>Courses</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,15 +1,14 @@
-// import { Outlet } from "react-router-dom";
-// import SideNav from "./sidenav";
+import Header from "./header";
+import SideNav from "./sidenav";
 
-// export default function MainLayout() {
-//   return (
-//     <>
-//       <div className="main-layout">
-//         <SideNav />
-//         <div className="main-content">
-//           <Outlet />
-//         </div>
-//       </div>
-//     </>
-//   );
-// }
+export default function MainLayout(props) {
+  return (
+    <div class="main-wrapper">
+      <Header />
+      <SideNav />
+      <div class="page-wrapper">
+        <div class="content container-fluid">{props.children}</div>
+      </div>
+    </div>
+  );
+}

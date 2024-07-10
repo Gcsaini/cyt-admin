@@ -1,13 +1,10 @@
-import Header from "../components/header";
 import SideContent from "../components/home/side-content";
-import SideNav from "../components/sidenav";
+import MainLayout from "../components/main-layout";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <SideNav />
+    <MainLayout>
       <SideContent />
-    </>
+    </MainLayout>
   );
 }

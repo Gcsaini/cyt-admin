@@ -1,11 +1,3 @@
-import { MorrisMisJS } from "../../assets/plugins/morris/morris.min";
-import "../../assets/css/custom.css";
-import "../../assets/css/bootstrap.min.css";
-import "../../assets/plugins/datatables/datatables.min.css";
-import "../../assets/plugins/fontawesome/css/fontawesome.min.css";
-import "../../assets/plugins/fontawesome/css/all.min.css";
-import "../../assets/css/feathericon.min.css";
-
 export default function Therapist() {
   return (
     <>
@@ -14,15 +6,6 @@ export default function Therapist() {
           <div class="row">
             <div class="col-sm-12">
               <h3 class="page-title">List of Doctors</h3>
-              {/* <ul class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="index.html">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="javascript:(0);">Users</a>
-                </li>
-                <li class="breadcrumb-item active">Doctor</li>
-              </ul> */}
             </div>
           </div>
         </div>
@@ -562,7 +545,6 @@ export default function Therapist() {
           </div>
         </div>
       </div>
-      <script src={MorrisMisJS}></script>
     </>
   );
 }

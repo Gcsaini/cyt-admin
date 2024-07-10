@@ -1,9 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const clientComponent = () => {
-  return (
-    <div>clientComponent</div>
-  )
+export default function ClientComponent() {
+  return <div>clientComponent</div>;
 }
-
-export default clientComponent
