@@ -1002,7 +1002,8 @@ p:last-child  {
   line-height: 60px;
 }
 .user-menu.nav > li > a .badge {
-  background-color: #1b5a90;
+  /* background-color: #1b5a90; */
+  background-color: #3eb75e;
   display: block;
   font-size: 10px;
   font-weight: 700;
@@ -1325,30 +1326,6 @@ html.menu-opened body {
     left: auto;
     right: 0;
   }
-}
-
-.submenu ul {
-  /* border-bottom: none; */
-}
-
-.submenu ul li {
-  background-color: #3eb75e;
-}
-
-.submenu ul li a {
-  text-decoration: none;
-  color: inherit;
-  /* background-color: red; */
-}
-
-.submenu ul li:hover {
-  color: black;
-  background-color: #fff;
-  border-radius: 5px;
-}
-
-.submenu.open ul {
-  display: block;
 }
 
 .table {
@@ -2409,6 +2386,14 @@ button.bg-danger:hover {
     margin-left: 78px;
   }
 }
+#submenu-tab .link{
+  text-decoration: none;
+  background-color: red;
+ }
+
+#sidebar {
+  background-color: #3eb75e;
+}
 
 .sidebar {
   background-color: #3eb75e;
@@ -2441,12 +2426,12 @@ button.bg-danger:hover {
 .sidebar .sidebar-menu > ul > li {
   margin-bottom: 3px;
   position: relative;
-  background-color: #3eb75e;
 }
 .sidebar .sidebar-menu > ul > li:last-child {
   margin-bottom: 0;
 }
-.sidebar .sidebar-menu > ul > li > a {
+.sidebar .sidebar-menu > ul > li > .link {
+  text-decoration: none;
   align-items: center;
   display: flex;
   justify-content: flex-start;
@@ -2458,7 +2443,7 @@ button.bg-danger:hover {
   border-radius: 3px;
   padding: 8px 15px;
 }
-.sidebar .sidebar-menu > ul > li > a span {
+.sidebar .sidebar-menu > ul > li > .link span {
   display: inline-block;
   margin-left: 10px;
   white-space: nowrap;
@@ -2466,12 +2451,12 @@ button.bg-danger:hover {
   -ms-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
 }
-.sidebar .sidebar-menu > ul > li > a span.chat-user {
+.sidebar .sidebar-menu > ul > li > .link span.chat-user {
   margin-left: 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.sidebar .sidebar-menu > ul > li > a span.badge {
+.sidebar .sidebar-menu > ul > li > .link span.badge {
   margin-left: auto;
 }
 .sidebar .sidebar-menu .menu-arrow {
@@ -2499,27 +2484,27 @@ button.bg-danger:hover {
 .sidebar ul ul {
   display: none;
 }
-.sidebar ul ul a {
+.sidebar ul ul .link {
   display: block;
   font-size: 15px !important;
   padding: 7px 10px 7px 45px !important;
   position: relative;
 }
-.sidebar ul ul a .menu-arrow {
+.sidebar ul ul .link .menu-arrow {
   top: 10px !important;
 }
-.sidebar ul ul ul a {
+.sidebar ul ul ul .link {
   padding-left: 65px !important;
 }
-.sidebar ul ul ul ul a {
+.sidebar ul ul ul ul .link {
   padding-left: 85px !important;
 }
-.sidebar ul li a.subdrop .menu-arrow {
+.sidebar ul li .link.subdrop .menu-arrow {
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
 }
-.sidebar ul li a i {
+.sidebar ul li .link i {
   display: inline-block;
   font-size: 24px;
   line-height: 24px;
@@ -2530,10 +2515,10 @@ button.bg-danger:hover {
   -ms-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
 }
-.sidebar ul li a > .badge {
+.sidebar ul li .link > .badge {
   color: #ffffff;
 }
-.sidebar ul li.menu-title a i {
+.sidebar ul li.menu-title .link i {
   font-size: 16px !important;
   margin-right: 0;
   text-align: right;
@@ -2558,28 +2543,29 @@ button.bg-danger:hover {
   margin: 0;
   padding: 0;
 }
-.sidebar-menu ul li a {
+.sidebar-menu ul li .link {
   color: #ffffff;
   display: block;
   font-size: 16px;
   height: auto;
   padding: 0 20px;
 }
-.sidebar-menu ul li a:hover {
-  color: #5ae8ff;
+.sidebar-menu ul li .link:hover {
+  color: #3eb75e;
 }
-.sidebar-menu ul li.active a {
-  color: #fff;
-}
-.sidebar-menu ul ul a.active {
-  color: #20e3ff;
-  text-decoration: underline;
-}
-.sidebar-menu > ul > li > a:hover {
+.sidebar-menu ul li.active .link {
   background-color: #fff;
   color: black;
 }
-.sidebar-menu > ul > li.active > a:hover {
+.sidebar-menu ul ul .link.active {
+  color: black;
+  text-decoration: underline;
+}
+.sidebar-menu > ul > li > .link:hover {
+  background-color: #fff;
+  color: black;
+}
+.sidebar-menu > ul > li.active > .link:hover {
   background-color: #fff;
   color: black;
 }

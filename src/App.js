@@ -15,6 +15,8 @@ import Invoice from "./pages/invoice";
 import Plan from "./pages/plans";
 import Blogs from "./pages/blogs";
 import Course from "./pages/course";
+import ClientRegistration from "./pages/clientregistraion";
+import TherapistRegistration from "./pages/therapistregistration";
 
 const theme = createTheme();
 
@@ -29,14 +31,24 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/registrations" element={<Registration />} />
+            <Route
+              exact
+              path="/clientregistration"
+              element={<ClientRegistration />}
+            />
+            <Route
+              exact
+              path="/therapistregistration"
+              element={<TherapistRegistration />}
+            />
             <Route exact path="/therapist" element={<Therapists />} />
             <Route exact path="/client" element={<Client />} />
             <Route exact path="/appointment" element={<Appointment />} />
             <Route exact path="/reviews" element={<Reviews />} />
             <Route exact path="/invoices" element={<Invoice />} />
             <Route exact path="/plans" element={<Plan />} />
-            <Route exact path="/blogs" element={<Blogs/>}/>
-            <Route exact path="/courses" element={<Course/>}/>
+            <Route exact path="/blogs" element={<Blogs />} />
+            <Route exact path="/courses" element={<Course />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
