@@ -1206,7 +1206,7 @@ html.menu-opened body {
   width: 230px;
 }
 .top-nav-search .form-control {
-  border-color:1px solid black;
+  border-color: 1px solid black;
   color: #333333;
   height: 40px;
   border-radius: 50px;
@@ -1417,7 +1417,7 @@ table.table td h2 a {
   color: #333333;
 }
 table.table td h2 a:hover {
-  color: #00d0f1;
+  color: #3eb75e;
 }
 table.table td h2 span {
   color: #888888;

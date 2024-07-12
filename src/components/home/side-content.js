@@ -451,7 +451,7 @@ export default function SideContent() {
                         </td>
                         <td>
                           9 Nov 2023{" "}
-                          <span className="text-primary d-block">
+                          <span className="text-success d-block">
                             11.00 AM - 11.15 AM
                           </span>
                         </td>
@@ -504,7 +504,7 @@ export default function SideContent() {
                         </td>
                         <td>
                           5 Nov 2023{" "}
-                          <span className="text-primary d-block">
+                          <span className="text-success d-block">
                             11.00 AM - 11.35 AM
                           </span>
                         </td>
@@ -557,7 +557,7 @@ export default function SideContent() {
                         </td>
                         <td>
                           11 Nov 2023{" "}
-                          <span className="text-primary d-block">
+                          <span className="text-success d-block">
                             12.00 PM - 12.15 PM
                           </span>
                         </td>
@@ -610,7 +610,7 @@ export default function SideContent() {
                         </td>
                         <td>
                           7 Nov 2023
-                          <span className="text-primary d-block">
+                          <span className="text-success d-block">
                             1.00 PM - 1.20 PM
                           </span>
                         </td>
@@ -663,7 +663,7 @@ export default function SideContent() {
                         </td>
                         <td>
                           15 Nov 2023{" "}
-                          <span className="text-primary d-block">
+                          <span className="text-success d-block">
                             1.00 PM - 1.15 PM
                           </span>
                         </td>

@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/custom.css";
-import scriptfile from "../assets/js/script";
+import { scriptfile } from "../assets/js/script";
 
 export default function SideNav() {
   const [submenuOpen, setSubmenuOpen] = useState({});
