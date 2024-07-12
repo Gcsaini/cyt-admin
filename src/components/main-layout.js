@@ -6,8 +6,8 @@ export default function MainLayout(props) {
     <div class="main-wrapper">
       <Header />
       <SideNav />
-      <div class="page-wrapper">
-        <div class="content container-fluid">{props.children}</div>
+      <div className="page-wrapper" style={{ minHeight: "354px" }}>
+        {props.children}
       </div>
     </div>
   );

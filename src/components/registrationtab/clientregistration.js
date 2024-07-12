@@ -1,7 +1,5 @@
-export default function ClientRegistration(){
-    return(
-        <div>
-            Client Registraion
-        </div>
-    )
+import ClientComponent from "../client/clientComponent";
+
+export default function ClientRegistration() {
+  return <ClientComponent />;
 }

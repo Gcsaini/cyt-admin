@@ -1,5 +1,5 @@
-export default function TherapistRegistrations(){
-    return(
-        <div>TherapistRegistration</div>
-    )
+import Therapist from "../therapists/therapist";
+
+export default function TherapistRegistrations() {
+  return <Therapist />;
 }

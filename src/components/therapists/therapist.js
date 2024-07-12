@@ -5,7 +5,7 @@ export default function Therapist() {
         <div class="page-header">
           <div class="row">
             <div class="col-sm-12">
-              <h3 class="page-title">List of Doctors</h3>
+              <h3 class="page-title">List of Therapist</h3>
             </div>
           </div>
         </div>

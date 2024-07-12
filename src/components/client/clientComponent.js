@@ -7,7 +7,7 @@ export default function ClientComponent() {
         <div class="page-header">
           <div class="row">
             <div class="col-sm-12">
-              <h3 class="page-title">List of Patient</h3>
+              <h3 class="page-title">List of Client</h3>
             </div>
           </div>
         </div>
