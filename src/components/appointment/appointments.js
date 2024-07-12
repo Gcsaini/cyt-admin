@@ -157,7 +157,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 5 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   11.00 AM - 11.35 AM
                                 </span>
                               </td>
@@ -210,7 +210,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 11 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   12.00 PM - 12.15 PM
                                 </span>
                               </td>
@@ -263,7 +263,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 21 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   12.10 PM - 12.25 PM
                                 </span>
                               </td>
@@ -318,7 +318,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 16 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   1.00 PM - 1.15 PM
                                 </span>
                               </td>
@@ -371,7 +371,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 18 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   1.10 PM - 1.25 PM
                                 </span>
                               </td>
@@ -424,7 +424,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 15 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   1.00 PM - 1.15 PM
                                 </span>
                               </td>
@@ -477,7 +477,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 23 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   12.10 PM - 12.25 PM
                                 </span>
                               </td>
@@ -533,7 +533,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 18 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   11.10 AM - 11.25 AM
                                 </span>
                               </td>
@@ -586,7 +586,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 9 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   11.00 AM - 11.15 AM
                                 </span>
                               </td>
@@ -639,7 +639,7 @@ export default function Appointments() {
                               </td>
                               <td>
                                 7 Nov 2023{" "}
-                                <span className="text-primary d-block">
+                                <span className="text-success d-block">
                                   1.00 PM - 1.20 PM
                                 </span>
                               </td>

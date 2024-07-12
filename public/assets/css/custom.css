@@ -1019,6 +1019,14 @@ p:last-child  {
     display: none;
   }
 }
+
+@media (max-width: 400px) {
+  .user-menu .dropdown-menu {
+    position: relative;
+    right: 0;
+  }
+}
+
 .user-menu .dropdown-menu {
   min-width: 200px;
   padding: 0;

@@ -7,12 +7,12 @@ export default function Header() {
     <>
       <div className="header">
         <div className="header-left">
-          <a href="index.html" className="logo">
+          <Link to={"/home"} className="logo">
             <img src={LogoImg} alt="Logo" />
-          </a>
-          <a href="index.html" className="logo logo-small">
+          </Link>
+          <Link to={"/home"} className="logo logo-small">
             <img src={SmallLogoImg} alt="Logo" width="30" height="30" />
-          </a>
+          </Link>
         </div>
 
         <Link id="toggle_btn">
@@ -20,7 +20,11 @@ export default function Header() {
         </Link>
         <div className="top-nav-search">
           <form>
-            <input type="text" className="form-control" placeholder="Search here" />
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search here"
+            />
             <button className="btn" type="submit">
               <i className="fa fa-search"></i>
             </button>

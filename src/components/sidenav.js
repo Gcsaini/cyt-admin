@@ -1,7 +1,7 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/custom.css";
-import { scriptfile } from "../assets/js/script";
+import "../assets/js/script.js";
 
 export default function SideNav() {
   const [submenuOpen, setSubmenuOpen] = useState({});
@@ -15,28 +15,27 @@ export default function SideNav() {
 
   return (
     <>
-      <div class="sidebar" id="sidebar">
+      <div className="sidebar" id="sidebar">
         <div
-          class="slimScrollDiv"
+          className="slimScrollDiv"
           style={{
             position: "relative",
             overflow: "hidden",
             width: "100%"
-            // height: "294px"
           }}
         >
           <div
-            class="sidebar-inner slimscroll"
+            className="sidebar-inner slimscroll"
             style={{ overflow: "hidden", width: "100%" }}
           >
-            <div id="sidebar-menu" class="sidebar-menu">
+            <div id="sidebar-menu" className="sidebar-menu">
               <ul>
-                <li class="menu-title">
+                <li className="menu-title">
                   <span>Main</span>
                 </li>
-                <li class="active">
+                <li className="active">
                   <Link to={"/home"} className="link">
-                    <i class="fe fe-home"></i> <span>Dashboard</span>
+                    <i className="fe fe-home"></i> <span>Dashboard</span>
                   </Link>
                 </li>
                 <li className="submenu">
@@ -44,7 +43,8 @@ export default function SideNav() {
                     className="link"
                     onClick={() => toggleSubmenu("reports")}
                   >
-                    <i className="fe fe-document"></i> <span> Registraion</span>{" "}
+                    <i className="fe fe-document"></i>{" "}
+                    <span> Registration</span>{" "}
                     <span className="menu-arrow"></span>
                   </Link>
                   <ul
@@ -121,7 +121,7 @@ export default function SideNav() {
             </div>
           </div>
           <div
-            class="slimScrollBar"
+            className="slimScrollBar"
             style={{
               background: "rgb(204, 204, 204)",
               width: "7px",
@@ -136,7 +136,7 @@ export default function SideNav() {
             }}
           ></div>
           <div
-            class="slimScrollRail"
+            className="slimScrollRail"
             style={{
               width: "7px",
               height: "100%",
@@ -152,8 +152,6 @@ export default function SideNav() {
           ></div>
         </div>
       </div>
-
-      <script src={scriptfile}></script>
     </>
   );
 }
