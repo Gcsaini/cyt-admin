@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 export default function Plans() {
   const [formData, setFormData] = useState({
@@ -282,66 +284,13 @@ export default function Plans() {
                         </table>
                       </div>
                     </div>
-                    <div className="row">
-                      {/* <div className="col-sm-12 col-md-5">
-                        <div
-                          className="dataTables_info"
-                          id="DataTables_Table_0_info"
-                          role="status"
-                          aria-live="polite"
-                        >
-                          Showing {plans.length > 0 ? 1 : 0} to {plans.length}{" "}
-                          of {plans.length} entries
-                        </div>
-                      </div> */}
-                      <div className="col-sm-12 col-md-7">
-                        <div
-                          className="dataTables_paginate paging_simple_numbers"
-                          id="DataTables_Table_0_paginate"
-                        >
-                          <ul className="pagination">
-                            <li
-                              className="paginate_button page-item previous disabled"
-                              id="DataTables_Table_0_previous"
-                            >
-                              <a
-                                href="#"
-                                aria-controls="DataTables_Table_0"
-                                data-dt-idx="0"
-                                tabindex="0"
-                                className="page-link"
-                              >
-                                Previous
-                              </a>
-                            </li>
-                            <li className="paginate_button page-item active">
-                              <a
-                                href="#"
-                                aria-controls="DataTables_Table_0"
-                                data-dt-idx="1"
-                                tabindex="0"
-                                className="page-link"
-                              >
-                                1
-                              </a>
-                            </li>
-                            <li
-                              className="paginate_button page-item next disabled"
-                              id="DataTables_Table_0_next"
-                            >
-                              <a
-                                href="#"
-                                aria-controls="DataTables_Table_0"
-                                data-dt-idx="2"
-                                tabindex="0"
-                                className="page-link"
-                              >
-                                Next
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+                    <div
+                      className="row"
+                      style={{ marginBottom: "20px", marginTop: "20px" }}
+                    >
+                      <Stack spacing={2} style={{ alignItems: "center" }}>
+                        <Pagination count={10} color="success" />
+                      </Stack>
                     </div>
                   </div>
                 </div>

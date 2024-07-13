@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/custom.css";
 import "../assets/js/script.js";
 
 export default function SideNav() {
-  const [submenuOpen, setSubmenuOpen] = useState({});
+  useEffect(() => {
+    // Load the script file to ensure toggle functionality works
+    const script = document.createElement("script");
+    script.src = "../assets/js/script.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-  const toggleSubmenu = (menu) => {
-    setSubmenuOpen((prev) => ({
-      ...prev,
-      [menu]: !prev[menu]
-    }));
-  };
-
+    // Cleanup script
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  
   return (
     <>
       <div className="sidebar" id="sidebar">
@@ -39,31 +43,23 @@ export default function SideNav() {
                   </Link>
                 </li>
                 <li className="submenu">
-                  <Link
-                    className="link"
-                    onClick={() => toggleSubmenu("reports")}
-                  >
+                  <Link className="link">
                     <i className="fe fe-document"></i>{" "}
                     <span> Registration</span>{" "}
                     <span className="menu-arrow"></span>
                   </Link>
-                  <ul
-                    style={{
-                      display: submenuOpen.reports ? "block" : "none"
-                    }}
-                  >
+                  <div className="submenu-list-2">
                     <li>
                       <Link to="/clientregistration" className="link">
-                        <i className="fe fe-user-plus"></i>
                         <span>Client</span>
                       </Link>
                     </li>
                     <li>
                       <Link to="/therapistregistration" className="link">
-                        <i className="fe fe-users"></i> <span>Therapist</span>
+                        <span>Therapist</span>
                       </Link>
                     </li>
-                  </ul>
+                  </div>
                 </li>
                 <li>
                   <Link to={"/therapist"} className="link">
@@ -152,6 +148,7 @@ export default function SideNav() {
           ></div>
         </div>
       </div>
+      <i className="fe fe-text-align-left" id="toggleSidebarIcon"></i>
     </>
   );
 }

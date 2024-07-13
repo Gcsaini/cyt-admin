@@ -1,8 +1,24 @@
 import { Link } from "react-router-dom";
 import LogoImg from "../../src/assets/img/logo.png";
 import SmallLogoImg from "../assets/img/logo-small.png";
+import "../assets/js/script.js";
+import { useEffect } from "react";
 
 export default function Header() {
+
+    useEffect(() => {
+      // Load the script file to ensure toggle functionality works
+      const script = document.createElement("script");
+      script.src = "../assets/js/script.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      // Cleanup script
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []);
+
   return (
     <>
       <div className="header">

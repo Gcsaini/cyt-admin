@@ -2399,6 +2399,20 @@ button.bg-danger:hover {
   background-color: red;
 }
 
+.submenu .submenu-list-2 {
+  display: none;
+}
+
+.submenu:hover .submenu-list-2 {
+  display: block;
+  margin-left: 25px;
+}
+
+.submenu .submenu-list-2 li {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 #sidebar {
   background-color: #3eb75e;
 }
