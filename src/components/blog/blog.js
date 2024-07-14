@@ -319,8 +319,10 @@ export default function Blog() {
               <div className="LYKI7">
                 <div className="LYKI7-left">
                   <TextField
+                    style={{ width: "250px" }}
+                    className="textfield"
                     id="standard-basic"
-                    label="Standard"
+                    label="Title ..."
                     variant="standard"
                   />
                 </div>
@@ -697,10 +699,17 @@ export default function Blog() {
                 </div>
               </div>
 
-              <div className="input-field">
+              {/* <div className="input-field">
                 <textarea type="text" placeholder="Enter here ...." />
-              </div>
+              </div> */}
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+          <div className="input-field">
+            <textarea type="text" placeholder="Enter here ...." />
           </div>
         </div>
       </div>

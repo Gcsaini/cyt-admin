@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/custom.css";
-import "../assets/js/script.js";
 
 export default function SideNav() {
-  useEffect(() => {
-    // Load the script file to ensure toggle functionality works
-    const script = document.createElement("script");
-    script.src = "../assets/js/script.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Cleanup script
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-  
   return (
     <>
       <div className="sidebar" id="sidebar">

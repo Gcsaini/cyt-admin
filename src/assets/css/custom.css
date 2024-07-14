@@ -2413,12 +2413,12 @@ button.bg-danger:hover {
   margin-top: 5px;
 }
 
+
 #sidebar {
   background-color: #3eb75e;
 }
 
 .sidebar {
-  background-color: #3eb75e;
   margin-top: 0;
   -webkit-transition: all 0.2s ease-in-out 0s;
   -ms-transition: all 0.2s ease-in-out 0s;

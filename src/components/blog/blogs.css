@@ -33,7 +33,7 @@
   margin: 0 30px;
 }
 
-.input-field textarea{
+.input-field textarea {
   border-radius: 10px;
   padding-left: 10px;
   width: 100%;
@@ -41,4 +41,19 @@
   height: 300px;
   line-height: 1.5;
   padding-top: 10px;
+  box-shadow: 0 0 5px;
+  background-color: #fff;
+}
+
+@media (max-width: 600px) {
+  .LYKI7 {
+    flex-wrap: wrap;
+  }
+
+  .LYKI7 .LYKI7-left {
+    margin-bottom: 10px;
+  }
+  .LYKI7 .LYKI7-left .textfield {
+    width: 200px;
+  }
 }
