@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./blogs.css";
 import { styled, alpha } from "@mui/material/styles";
 import Button from "@mui/material/Button";
@@ -78,6 +78,7 @@ const StyledMenu = styled((props) => (
 }));
 
 export default function Blog() {
+  const navigate = useNavigate();
   const [anchorEls, setAnchorEls] = React.useState({});
 
   const handleClick = (event, index) => {
@@ -309,6 +310,10 @@ export default function Blog() {
       <Divider sx={{ my: 0.5 }} />
     </StyledMenu>
   );
+
+  const handleSaveIcon = () => {
+    navigate("/blogContainer");
+  };
 
   return (
     <div className="content container-fluid">
@@ -687,7 +692,7 @@ export default function Blog() {
                           variant="contained"
                           color="success"
                           disableElevation
-                          // onClick={(event) => handleClick(event, 9)}
+                          onClick={() => handleSaveIcon()}
                           // endIcon={<KeyboardArrowDownIcon />}
                         >
                           <SaveIcon />
@@ -698,10 +703,6 @@ export default function Blog() {
                   </ul>
                 </div>
               </div>
-
-              {/* <div className="input-field">
-                <textarea type="text" placeholder="Enter here ...." />
-              </div> */}
             </div>
           </div>
         </div>

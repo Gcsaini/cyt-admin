@@ -17,6 +17,7 @@ import Blogs from "./pages/blogs";
 import Course from "./pages/course";
 import ClientRegistration from "./pages/clientregistraion";
 import TherapistRegistration from "./pages/therapistregistration";
+import BlogContainerPage from "./pages/blogContainer";
 
 const theme = createTheme();
 
@@ -49,6 +50,11 @@ function App() {
             <Route exact path="/plans" element={<Plan />} />
             <Route exact path="/blogs" element={<Blogs />} />
             <Route exact path="/courses" element={<Course />} />
+            <Route
+              exact
+              path="/blogContainer"
+              element={<BlogContainerPage />}
+            />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
