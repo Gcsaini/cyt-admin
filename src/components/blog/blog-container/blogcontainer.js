@@ -7,7 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import { Avatar } from "@mui/material";
+import { Avatar, TextField } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
 import ViewSidebarIcon from "@mui/icons-material/ViewSidebar";
 import PublishIcon from "@mui/icons-material/Publish";
@@ -15,6 +15,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import PreviewIcon from "@mui/icons-material/Preview";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { Label } from "@mui/icons-material";
+import ModalComponent from "../../Modal/modal-component";
 
 const StyledMenu = styled((props) => (
   <Menu
@@ -60,6 +61,16 @@ const StyledMenu = styled((props) => (
 }));
 
 export default function BlogContainer() {
+  const [open, setOpen] = React.useState(false);
+  const [modalContent, setModalContent] = React.useState(null);
+
+  const handleOpenmodal = (content) => {
+    setModalContent(content);
+    setOpen(true);
+  };
+
+  const handleClosemodal = () => setOpen(false);
+
   const [anchorEls, setAnchorEls] = React.useState({});
 
   const handleClick = (event, index) => {
@@ -126,33 +137,14 @@ export default function BlogContainer() {
   );
 
   return (
-    <div className="content container-fluid">
-      <div className="row">
-        <div className="col-md-12">
-          <div className="card">
-            <div className="card-body">
-              <div className="LYKI7">
-                <div className="LYKI7-left">
-                  <Button
-                    id="demo-customized-button-0"
-                    aria-controls={
-                      anchorEls[0] ? "demo-customized-menu-0" : undefined
-                    }
-                    aria-haspopup="true"
-                    aria-expanded={anchorEls[0] ? "true" : undefined}
-                    variant="contained"
-                    color="success"
-                    disableElevation
-                    onClick={(event) => handleClick(event, 0)}
-                    endIcon={<KeyboardArrowDownIcon />}
-                  >
-                    All
-                  </Button>
-                  {renderMenu(0)}
-                </div>
-
-                <div className="LYKI7-right">
-                  <div className="LYKI7-chield">
+    <>
+      <div className="content container-fluid">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-body">
+                <div className="LYKI7">
+                  <div className="LYKI7-left">
                     <Button
                       id="demo-customized-button-0"
                       aria-controls={
@@ -163,25 +155,137 @@ export default function BlogContainer() {
                       variant="contained"
                       color="success"
                       disableElevation
+                      onClick={(event) => handleClick(event, 0)}
+                      endIcon={<KeyboardArrowDownIcon />}
                     >
-                      <FilterAltIcon />
+                      All
                     </Button>
                     {renderMenu(0)}
                   </div>
-                  <div className="LYKI7-chield">
+
+                  <div className="LYKI7-right">
+                    <div className="LYKI7-chield">
+                      <Button
+                        id="demo-customized-button-0"
+                        aria-controls={
+                          anchorEls[0] ? "demo-customized-menu-0" : undefined
+                        }
+                        aria-haspopup="true"
+                        aria-expanded={anchorEls[0] ? "true" : undefined}
+                        variant="contained"
+                        color="success"
+                        disableElevation
+                      >
+                        <FilterAltIcon
+                          onClick={() =>
+                            handleOpenmodal(
+                              <>
+                                <div className="blog-conatiner-modal">
+                                  <TextField
+                                    style={{
+                                      width: "100%",
+                                      boxSizing: "border-box"
+                                    }}
+                                    label="Seprate labels with commas"
+                                    variant="standard"
+                                  />
+                                </div>
+                                <div className="blog-container-modal-button">
+                                  <Button variant="outlined">Cancel</Button>
+                                  <Button variant="outlined">Apply</Button>
+                                </div>
+                              </>
+                            )
+                          }
+                        />
+                      </Button>
+                      {renderMenu(0)}
+                    </div>
+                    <div className="LYKI7-chield">
+                      <Button
+                        id="demo-customized-button-1"
+                        aria-controls={
+                          anchorEls[1] ? "demo-customized-menu-1" : undefined
+                        }
+                        aria-haspopup="true"
+                        aria-expanded={anchorEls[1] ? "true" : undefined}
+                        variant="contained"
+                        color="success"
+                        disableElevation
+                      >
+                        Manage
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="card">
+              <div className="card-body blogcontainer-divide">
+                <div className="bottom-dropdown-left">
+                  <div className="blogcontainer-img">
+                    <h1>U</h1>
+                  </div>
+                  <div className="blogcontainer-detail-img">
+                    <p>(United)</p>
+                    <p>
+                      <span>Draft</span>16 July
+                    </p>
+                  </div>
+                </div>
+                <div className="bottom-dropdown-right">
+                  <div className="bottom-dropdown-right-left">
+                    <ul>
+                      <li className="hide">
+                        <PublishIcon />
+                      </li>
+                      <li className="hide">
+                        <FilterAltIcon />
+                      </li>
+                      <li className="hide">
+                        <DeleteIcon />
+                      </li>
+                      <li className="hide">
+                        <PreviewIcon />
+                      </li>
+                      <li className="show">dnd</li>
+                      <li>
+                        {" "}
+                        <Avatar className="avatar" />
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bottom-dropdown-right-left-mobile-view">
                     <Button
-                      id="demo-customized-button-1"
+                      id="demo-customized-button-0"
                       aria-controls={
-                        anchorEls[1] ? "demo-customized-menu-1" : undefined
+                        anchorEls[1] ? "demo-customized-menu-0" : undefined
                       }
                       aria-haspopup="true"
                       aria-expanded={anchorEls[1] ? "true" : undefined}
                       variant="contained"
                       color="success"
                       disableElevation
+                      onClick={(event) => handleClick(event, 1)}
+                      // endIcon={<KeyboardArrowDownIcon />}
                     >
-                      Manage
+                      <MoreVertIcon />
                     </Button>
+                    {renderMoreMenu(1)}
+                  </div>
+                  <div className="bottom-dropdown-right-left">
+                    <ul>
+                      <li>
+                        0 <CommentIcon />
+                      </li>
+                      <li>
+                        0 <ViewSidebarIcon />
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -189,76 +293,11 @@ export default function BlogContainer() {
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-12">
-          <div className="card">
-            <div className="card-body blogcontainer-divide">
-              <div className="bottom-dropdown-left">
-                <div className="blogcontainer-img">
-                  <h1>U</h1>
-                </div>
-                <div className="blogcontainer-detail-img">
-                  <p>(United)</p>
-                  <p>
-                    <span>Draft</span>16 July
-                  </p>
-                </div>
-              </div>
-              <div className="bottom-dropdown-right">
-                <div className="bottom-dropdown-right-left">
-                  <ul>
-                    <li className="hide">
-                      <PublishIcon />
-                    </li>
-                    <li className="hide">
-                      <FilterAltIcon />
-                    </li>
-                    <li className="hide">
-                      <DeleteIcon />
-                    </li>
-                    <li className="hide">
-                      <PreviewIcon />
-                    </li>
-                    <li className="show">dnd</li>
-                    <li>
-                      {" "}
-                      <Avatar className="avatar" />
-                    </li>
-                  </ul>
-                </div>
-                <div className="bottom-dropdown-right-left-mobile-view">
-                  <Button
-                    id="demo-customized-button-0"
-                    aria-controls={
-                      anchorEls[1] ? "demo-customized-menu-0" : undefined
-                    }
-                    aria-haspopup="true"
-                    aria-expanded={anchorEls[1] ? "true" : undefined}
-                    variant="contained"
-                    color="success"
-                    disableElevation
-                    onClick={(event) => handleClick(event, 1)}
-                    // endIcon={<KeyboardArrowDownIcon />}
-                  >
-                    <MoreVertIcon />
-                  </Button>
-                  {renderMoreMenu(1)}
-                </div>
-                <div className="bottom-dropdown-right-left">
-                  <ul>
-                    <li>
-                      0 <CommentIcon />
-                    </li>
-                    <li>
-                      0 <ViewSidebarIcon />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <ModalComponent
+        open={open}
+        handleClose={handleClosemodal}
+        content={modalContent}
+      />
+    </>
   );
 }

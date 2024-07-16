@@ -61,6 +61,25 @@
   display: none;
 }
 
+.blog-container-modal-button {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: flex-end;
+}
+
+.blog-container-modal-button button {
+  margin-left: 10px;
+  color: black;
+  border-color: #3eb75e;
+  align-items: end;
+}
+
+.blog-container-modal-button button:hover {
+  background-color: #3eb75e;
+  color: #fff;
+}
+
 @media (max-width: 600px) {
   .bottom-dropdown-right-left-mobile-view {
     display: block;
