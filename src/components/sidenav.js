@@ -1,8 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import "../assets/css/custom.css";
-
+import { Link, useLocation } from "react-router-dom";
+import React from "react";
 export default function SideNav() {
+  const location = useLocation();
+  const currentPath = location.pathname;
   return (
     <>
       <div className="sidebar" id="sidebar">
@@ -11,7 +12,7 @@ export default function SideNav() {
           style={{
             position: "relative",
             overflow: "hidden",
-            width: "100%"
+            width: "100%",
           }}
         >
           <div
@@ -23,56 +24,37 @@ export default function SideNav() {
                 <li className="menu-title">
                   <span>Main</span>
                 </li>
-                <li className="active">
+                <li className={currentPath == "/home" ? "active" : ""}>
                   <Link to={"/home"} className="link">
                     <i className="fe fe-home"></i> <span>Dashboard</span>
                   </Link>
                 </li>
-                <li className="submenu">
-                  <Link className="link">
-                    <i className="fe fe-document"></i>{" "}
-                    <span> Registration</span>{" "}
-                    <span className="menu-arrow"></span>
-                  </Link>
-                  <div className="submenu-list-2">
-                    <li>
-                      <Link to="/clientregistration" className="link">
-                        <span>Client</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/therapistregistration" className="link">
-                        <span>Therapist</span>
-                      </Link>
-                    </li>
-                  </div>
-                </li>
-                <li>
-                  <Link to={"/therapist"} className="link">
+                <li className={currentPath == "/therapists" ? "active" : ""}>
+                  <Link to={"/therapists"} className="link">
                     <i className="fe fe-users"></i> <span>Therapists</span>
                   </Link>
                 </li>
-                <li>
-                  <Link to={"/client"} className="link">
+                <li className={currentPath == "/clients" ? "active" : ""}>
+                  <Link to={"/clients"} className="link">
                     <i className="fe fe-user-plus"></i> <span>Clients</span>
                   </Link>
                 </li>
-                <li>
-                  <Link to={"/appointment"} className="link">
+                <li className={currentPath == "/appointments" ? "active" : ""}>
+                  <Link to={"/appointments"} className="link">
                     <i className="fe fe-user"></i> <span>Appointments</span>
                   </Link>
                 </li>
-                <li>
+                <li className={currentPath == "/reviews" ? "active" : ""}>
                   <Link to={"/reviews"} className="link">
                     <i className="fe fe-star-o"></i> <span>Reviews</span>
                   </Link>
                 </li>
-                <li>
+                <li className={currentPath == "/invoices" ? "active" : ""}>
                   <Link to={"/invoices"} className="link">
                     <i className="fe fe-activity"></i> <span>Invoices</span>
                   </Link>
                 </li>
-                <li>
+                <li className={currentPath == "/plans" ? "active" : ""}>
                   <Link to={"/plans"} className="link">
                     <i
                       className="fas fa-tasks"
@@ -81,7 +63,7 @@ export default function SideNav() {
                     <span>Plans</span>
                   </Link>
                 </li>
-                <li>
+                <li className={currentPath == "/blogs" ? "active" : ""}>
                   <Link to={"/blogs"} className="link">
                     <i
                       className="fa-solid fa-blog"
@@ -90,7 +72,7 @@ export default function SideNav() {
                     <span>Blogs</span>
                   </Link>
                 </li>
-                <li>
+                <li className={currentPath == "/courses" ? "active" : ""}>
                   <Link to={"/courses"} className="link">
                     <i
                       className="fa-solid fa-user-graduate"
@@ -114,7 +96,7 @@ export default function SideNav() {
               borderRadius: "7px",
               zIndex: "99",
               right: "1px",
-              height: "410.274px"
+              height: "410.274px",
             }}
           ></div>
           <div
@@ -129,7 +111,7 @@ export default function SideNav() {
               background: "rgb(51, 51, 51)",
               opacity: "0.2",
               zIndex: "90",
-              right: "1px"
+              right: "1px",
             }}
           ></div>
         </div>

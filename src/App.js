@@ -31,7 +31,7 @@ function App() {
             <Route exact path="/" element={<Login />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/home" element={<Home />} />
-            <Route exact path="/registrations" element={<Registration />} />
+            {/* <Route exact path="/registrations" element={<Registration />} /> */}
             <Route
               exact
               path="/clientregistration"
@@ -42,9 +42,9 @@ function App() {
               path="/therapistregistration"
               element={<TherapistRegistration />}
             />
-            <Route exact path="/therapist" element={<Therapists />} />
-            <Route exact path="/client" element={<Client />} />
-            <Route exact path="/appointment" element={<Appointment />} />
+            <Route exact path="/therapists" element={<Registration />} />
+            <Route exact path="/clients" element={<Client />} />
+            <Route exact path="/appointments" element={<Appointment />} />
             <Route exact path="/reviews" element={<Reviews />} />
             <Route exact path="/invoices" element={<Invoice />} />
             <Route exact path="/plans" element={<Plan />} />

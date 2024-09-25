@@ -92,7 +92,7 @@ export default function TherapistLists() {
     getData();
   }, []);
   return (
-    <div className="page-wrapper">
+    <>
       <div className="content container-fluid">
         <div className="page-header">
           <div className="row">
@@ -227,6 +227,6 @@ export default function TherapistLists() {
           </Typography>
         </Box>
       </Modal>
-    </div>
+    </>
   );
 }
