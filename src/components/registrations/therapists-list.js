@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { truncateString } from "../../helpers/string-concate";
+import ActiveInactiveSwitch from "./ActiveInactiveSwitch";
 export default function TherapistLists() {
   const [data, setData] = React.useState([]);
   const [open, setOpen] = React.useState(false);
@@ -118,7 +119,7 @@ export default function TherapistLists() {
                           <th>Serve Type</th>
                           <th>Profile Type</th>
                           <th>Resume</th>
-                          <th>Mode</th>
+                          <th>Active</th>
                           <th>Mail Sent?</th>
                           <th>Aproved?</th>
                         </tr>
@@ -150,7 +151,12 @@ export default function TherapistLists() {
                                     View
                                   </a>
                                 </td>
-                                <td>{getMode(item.mode)}</td>
+                                <td>
+                                  <ActiveInactiveSwitch
+                                    value={item.isActive}
+                                    id={item._id}
+                                  />
+                                </td>
                                 <td>
                                   <span
                                     style={{

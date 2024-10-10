@@ -18,6 +18,7 @@ import Course from "./pages/course";
 import ClientRegistration from "./pages/clientregistraion";
 import TherapistRegistration from "./pages/therapistregistration";
 import BlogContainerPage from "./pages/blogContainer";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const theme = createTheme();
 
@@ -30,31 +31,127 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Login />} />
             <Route exact path="/login" element={<Login />} />
-            <Route exact path="/home" element={<Home />} />
-            {/* <Route exact path="/registrations" element={<Registration />} /> */}
+
+            <Route
+              exact
+              path="/home"
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
+
             <Route
               exact
               path="/clientregistration"
-              element={<ClientRegistration />}
+              element={
+                <ProtectedRoute>
+                  <ClientRegistration />
+                </ProtectedRoute>
+              }
             />
+
             <Route
               exact
               path="/therapistregistration"
-              element={<TherapistRegistration />}
+              element={
+                <ProtectedRoute>
+                  <TherapistRegistration />
+                </ProtectedRoute>
+              }
             />
-            <Route exact path="/therapists" element={<Registration />} />
-            <Route exact path="/clients" element={<Client />} />
-            <Route exact path="/appointments" element={<Appointment />} />
-            <Route exact path="/reviews" element={<Reviews />} />
-            <Route exact path="/invoices" element={<Invoice />} />
-            <Route exact path="/plans" element={<Plan />} />
-            <Route exact path="/blogs" element={<Blogs />} />
-            <Route exact path="/courses" element={<Course />} />
+
+            <Route
+              exact
+              path="/therapists"
+              element={
+                // <ProtectedRoute>
+                <Registration />
+                // </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/clients"
+              element={
+                <ProtectedRoute>
+                  <Client />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/appointments"
+              element={
+                <ProtectedRoute>
+                  <Appointment />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/reviews"
+              element={
+                <ProtectedRoute>
+                  <Reviews />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/invoices"
+              element={
+                <ProtectedRoute>
+                  <Invoice />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/plans"
+              element={
+                <ProtectedRoute>
+                  <Plan />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/blogs"
+              element={
+                <ProtectedRoute>
+                  <Blogs />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/courses"
+              element={
+                <ProtectedRoute>
+                  <Course />
+                </ProtectedRoute>
+              }
+            />
+
             <Route
               exact
               path="/blogContainer"
-              element={<BlogContainerPage />}
+              element={
+                <ProtectedRoute>
+                  <BlogContainerPage />
+                </ProtectedRoute>
+              }
             />
+
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
