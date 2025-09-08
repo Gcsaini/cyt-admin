@@ -3,7 +3,7 @@ import LazyImage from "../../helpers/lazy-image";
 export default function SideContent() {
   return (
     <>
-      <div class="content container-fluid">
+      <div className="content container-fluid">
         <div className="page-header">
           <div className="row">
             <div className="col-sm-12">

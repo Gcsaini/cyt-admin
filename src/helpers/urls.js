@@ -18,3 +18,4 @@ export const aprovedTherapist = `${apiUrl}/aprove-therapist`;
 export const toggleActive = `${apiUrl}/toggle-active`;
 export const verifyOtpUrl = `${apiUrl}/verify-otp`;
 export const ShowTOPageUrl = `${apiUrl}/toggle-to-show-to-page`;
+export const SetPriorityUrl = `${apiUrl}/set-priority`;

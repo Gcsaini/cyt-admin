@@ -6,7 +6,6 @@ import {
   sendAproveMail,
 } from "../../helpers/urls";
 import axios from "axios";
-import { getMode } from "../../helpers/get-mode";
 import Box from "@mui/material/Box";
 
 import Typography from "@mui/material/Typography";
@@ -15,6 +14,7 @@ import { truncateString } from "../../helpers/string-concate";
 import ActiveInactiveSwitch from "./ActiveInactiveSwitch";
 import { fetchById } from "../../helpers/actions";
 import { toast } from "react-toastify";
+import PriorityDropdown from "./priority-dropdown";
 export default function TherapistLists() {
   const [data, setData] = React.useState([]);
   const [open, setOpen] = React.useState(false);
@@ -124,6 +124,7 @@ export default function TherapistLists() {
                           <th>Resume</th>
                           <th>Show To Page</th>
                           <th>Mail Sent?</th>
+                          <th>Priority</th>
                           <th>Aproved?</th>
                         </tr>
                       </thead>
@@ -161,6 +162,7 @@ export default function TherapistLists() {
                                     id={item._id}
                                   />
                                 </td>
+                                 
                                 <td>
                                   <span
                                     style={{
@@ -181,6 +183,12 @@ export default function TherapistLists() {
                                       ? "Sending..."
                                       : "Send Mail"}
                                   </div>
+                                </td>
+                                <td>
+                                  <PriorityDropdown 
+                                   value={item.priority}
+                                    id={item._id}
+                                    />
                                 </td>
                                 <td>
                                   {item.user.is_verified ? (
