@@ -1,27 +1,26 @@
 import Switch from "@mui/material/Switch";
-import React, { useEffect } from "react";
-import { toggleActive } from "../../helpers/urls";
-import axios from "axios";
+import React from "react";
+import { ShowTOPageUrl } from "../../helpers/urls";
+import { fetchById } from "../../helpers/actions";
+import { toast } from "react-toastify";
 export default function ActiveInactiveSwitch({ value, id }) {
   const [checked, setChecked] = React.useState(value);
-  console.log("valee", value);
   const activeProfile = async () => {
     try {
-      const response = await axios.get(`${toggleActive}/${id}`);
-      if (response.data.status) {
-        console.log("success", response.data.message);
+      const response = await fetchById(`${ShowTOPageUrl}/${id}`);
+      if (response.status) {
+        toast.success(response.message);
       } else {
-        setError("Error to update Profile");
+        toast.error(response.message);
       }
     } catch (error) {
-      console.log(error.message);
+      toast.error(error.response.data?.message);
     }
   };
 
   const handleChange = (event) => {
     const value = event.target.checked;
     setChecked(value);
-    console.log("valueee", value);
     activeProfile();
   };
 

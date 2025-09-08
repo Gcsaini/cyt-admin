@@ -4,7 +4,7 @@ import NotAuthorizedPage from "./not-authorized";
 
 const ProtectedRoute = ({ children }) => {
   const data = getDecodedToken();
-  if (data && data.role === 1) {
+  if (data && data.role === 2) {
     return children;
   }
   return <NotAuthorizedPage />;

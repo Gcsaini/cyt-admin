@@ -9,7 +9,8 @@ import Home from "./pages/home";
 import Registration from "./pages/registration";
 import Appointment from "./pages/appointments";
 import Client from "./pages/client";
-import Therapists from "./pages/therapist";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Reviews from "./pages/reviews";
 import Invoice from "./pages/invoice";
 import Plan from "./pages/plans";
@@ -66,9 +67,9 @@ function App() {
               exact
               path="/therapists"
               element={
-                // <ProtectedRoute>
-                <Registration />
-                // </ProtectedRoute>
+                <ProtectedRoute>
+                  <Registration />
+                </ProtectedRoute>
               }
             />
 
@@ -156,6 +157,7 @@ function App() {
           </Routes>
         </div>
       </>
+      <ToastContainer position="top-right" autoClose={3000} />
     </ThemeProvider>
   );
 }

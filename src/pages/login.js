@@ -5,55 +5,85 @@ import { postData } from "../helpers/actions";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { isValidMail } from "../helpers/validators";
-import { loginUrl } from "../helpers/urls";
+import { loginUrl, verifyOtpUrl } from "../helpers/urls";
+import { toast } from "react-toastify";
 export default function Login() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpView, setOtpView] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
     if (email.length < 7 || !isValidMail(email)) {
-      setError("Please enter valid email address");
-      return;
-    }
-    if (password.length < 6) {
-      setError("Please enter valid password");
+      toast.error("Please enter valid email address");
       return;
     }
     const value = {
       email,
-      password,
     };
 
     try {
       setLoading(true);
       const response = await postData(loginUrl, value);
       if (response.status) {
-        setToken(response.token, true);
-        const data = getDecodedToken(response.token);
-        if (data.role === 1) {
-          navigate("/home");
-        } else {
-          navigate("/not-found");
-        }
+        toast.success("OTP has been sent to your mail id");
+        setOtpView(true);
       } else {
-        setError(response.message);
+        toast.error(response.message);
       }
     } catch (error) {
-      setError(error.response.data.message);
+      toast.error(error.response?.data?.message || "Something went wrong!");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleOtp = (e) => {
+    const value = e.target.value;
+    const formattedValue = value.replace(/\D/g, "").slice(0, 6);
+    setOtp(formattedValue);
+  };
+
+  const submitOtp = async () => {
+    if (otp.length !== 6) {
+      toast.error("Please enter valid OTP");
+      return;
+    }
+    const value = {
+      email,
+      otp,
+    };
+    console.log(value);
+    try {
+      setLoading(true);
+      const response = await postData(verifyOtpUrl, value);
+      if (response.status) {
+        setOtp("");
+        if (response.data.role === 2) {
+          toast.success(response.message);
+          setToken(response.token);
+          navigate("/home");
+        } else {
+          toast.error("You are not authorized to perform this action.");
+        }
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Something went wrong");
     }
 
     setLoading(false);
   };
 
+  console.log('email',email);
+
   useEffect(() => {
     const data = getDecodedToken();
     if (data) {
-      if (data.role === 1) {
+      if (data.role === 2) {
         navigate("/home");
       }
     }
@@ -69,35 +99,51 @@ export default function Login() {
             <div className="login-right">
               <div className="login-right-wrap">
                 <h1>Login</h1>
-                <p className="account-subtitle">Access to our dashboard</p>
+                <p className="account-subtitle">Access to dashboard</p>
 
-                <div className="mb-3">
-                  <input
-                    className="form-control"
-                    type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                  />
-                </div>
-                <div className="mb-3">
-                  <input
-                    className="form-control"
-                    type="text"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"
-                  />
-                </div>
-                <div className="mb-3">
-                  <button
-                    className="btn btn-primary w-100"
-                    type="submit"
-                    onClick={handleSubmit}
-                  >
-                    Login
-                  </button>
-                </div>
+                {otpView ? (
+                  <>
+                    <div className="mb-3">
+                      <input
+                        className="form-control"
+                        type="text"
+                        value={otp}
+                        onChange={handleOtp}
+                        placeholder="OTP"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <button
+                        className="btn btn-primary w-100"
+                        type="submit"
+                        onClick={submitOtp}
+                      >
+                        Verify
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="mb-3">
+                      <input
+                        className="form-control"
+                        type="text"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <button
+                        className="btn btn-primary w-100"
+                        type="submit"
+                        onClick={handleSubmit}
+                      >
+                        Submit
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>

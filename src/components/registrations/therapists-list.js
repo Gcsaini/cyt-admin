@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import {
   aprovedTherapist,
   getTherapists,
+  resumePath,
   sendAproveMail,
 } from "../../helpers/urls";
 import axios from "axios";
@@ -12,6 +13,8 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { truncateString } from "../../helpers/string-concate";
 import ActiveInactiveSwitch from "./ActiveInactiveSwitch";
+import { fetchById } from "../../helpers/actions";
+import { toast } from "react-toastify";
 export default function TherapistLists() {
   const [data, setData] = React.useState([]);
   const [open, setOpen] = React.useState(false);
@@ -46,13 +49,13 @@ export default function TherapistLists() {
 
   const getData = async () => {
     try {
-      const response = await axios.get(getTherapists);
-      if (response.data.status) {
-        setData(response.data.data);
+      const response = await fetchById(getTherapists);
+      if (response.status) {
+        setData(response.data);
       } else {
       }
     } catch (error) {
-      console.log(error);
+      toast.error(error.response?.data?.message || "Something went weong");
     }
   };
 
@@ -76,15 +79,15 @@ export default function TherapistLists() {
   const aproveProfile = async (id) => {
     try {
       handleLoadingOpenModal(true);
-      const response = await axios.get(`${aprovedTherapist}/${id}`);
-      if (response.data.status) {
-        setSuccess("Profile aproved");
+      const response = await fetchById(`${aprovedTherapist}/${id}`);
+      if (response.status) {
+        toast.success("Profile aproved");
         getData();
       } else {
-        setError("Error to aproved Account.Please contact your CTO");
+        toast.error("Error to aproved Account.Please contact your CTO");
       }
     } catch (error) {
-      setError(`${error.response.data.message}.Please contact your CTO`);
+      toast.error(`${error.response.data.message} || Something went wrong`);
     }
     handleLoadingClose(false);
   };
@@ -119,7 +122,7 @@ export default function TherapistLists() {
                           <th>Serve Type</th>
                           <th>Profile Type</th>
                           <th>Resume</th>
-                          <th>Active</th>
+                          <th>Show To Page</th>
                           <th>Mail Sent?</th>
                           <th>Aproved?</th>
                         </tr>
@@ -128,15 +131,16 @@ export default function TherapistLists() {
                         {data &&
                           data.length > 0 &&
                           data.map((item) => {
+                            console.log("userss",item.user);
                             return (
                               <tr key={item._id}>
                                 <td>
                                   <h2 className="table-avatar">
-                                    <a href="/details">{item.name} </a>
+                                    <a href="/details">{item.user?.name} </a>
                                   </h2>
-                                  <p>{item.email}</p>
+                                  <p>{item.user?.email}</p>
                                 </td>
-                                <td>{item.phone}</td>
+                                <td>{item.user?.phone}</td>
                                 <td>
                                   <div
                                     style={{ cursor: "pointer" }}
@@ -147,13 +151,13 @@ export default function TherapistLists() {
                                 </td>
                                 <td>{item.profile_type}</td>
                                 <td>
-                                  <a href={item.resume} target="_blank">
+                                  <a href={`${resumePath}/${item.resume}`} target="_blank">
                                     View
                                   </a>
                                 </td>
                                 <td>
                                   <ActiveInactiveSwitch
-                                    value={item.isActive}
+                                    value={item.show_to_page}
                                     id={item._id}
                                   />
                                 </td>
@@ -179,13 +183,13 @@ export default function TherapistLists() {
                                   </div>
                                 </td>
                                 <td>
-                                  {item.is_aproved ? (
+                                  {item.user.is_verified ? (
                                     <span className="badge rounded-pill bg-success inv-badge">
                                       Aproved
                                     </span>
                                   ) : (
                                     <div
-                                      onClick={() => aproveProfile(item._id)}
+                                      onClick={() => aproveProfile(item.user?._id)}
                                       style={{ cursor: "pointer" }}
                                     >
                                       <span className="badge rounded-pill bg-danger-light inv-badge">
