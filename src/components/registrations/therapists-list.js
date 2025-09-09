@@ -7,7 +7,6 @@ import {
 } from "../../helpers/urls";
 import axios from "axios";
 import Box from "@mui/material/Box";
-
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { truncateString } from "../../helpers/string-concate";
@@ -29,7 +28,7 @@ export default function TherapistLists() {
     setOpen(true);
   };
 
-  const handleLoadingOpenModal = (service) => {
+  const handleLoadingOpenModal = () => {
     setLoadingModal(true);
   };
   const handleClose = () => setOpen(false);
@@ -52,6 +51,7 @@ export default function TherapistLists() {
       const response = await fetchById(getTherapists);
       if (response.status) {
         setData(response.data);
+
       } else {
       }
     } catch (error) {
@@ -151,6 +151,7 @@ export default function TherapistLists() {
                                   </div>
                                 </td>
                                 <td>{item.profile_type}</td>
+                                
                                 <td>
                                   <a href={`${resumePath}/${item.resume}`} target="_blank">
                                     View
@@ -191,7 +192,7 @@ export default function TherapistLists() {
                                     />
                                 </td>
                                 <td>
-                                  {item.user.is_verified ? (
+                                  {item.user?.is_verified ? (
                                     <span className="badge rounded-pill bg-success inv-badge">
                                       Aproved
                                     </span>
