@@ -8,8 +8,10 @@ imagePath
 import { fetchById } from "../../helpers/actions";
 import {formatDate,formatDateTime,formatTime} from "../../helpers/times.js"
 import { toast } from "react-toastify";
+import PaymentStatusWidget from "./paymentStatus.js";
 export default function Appointments() {
- const [data, setData] = React.useState([]);
+ const [data, setData] = React.useState([]); 
+ const [paymentStatus, setPaymentStatus] = React.useState([]); 
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
@@ -18,6 +20,8 @@ export default function Appointments() {
       const response = await fetchById(getBookings);
       if (response.status) {
         setData(response.data);
+        setPaymentStatus(response.statuslist);
+
         toast.success(response.message);
       } else {
       }
@@ -105,7 +109,7 @@ export default function Appointments() {
                                 aria-label="Patient Name: activate to sort column ascending"
                                 style={{ width: "161.062px" }}
                               >
-                                User Name
+                                Service
                               </th>
                               <th
                                 className="sorting"
@@ -116,7 +120,7 @@ export default function Appointments() {
                                 aria-label="Speciality: activate to sort column ascending"
                                 style={{ width: "83.5156px" }}
                               >
-                                Phone
+                                User
                               </th>
                               <th
                                 className="sorting"
@@ -139,6 +143,17 @@ export default function Appointments() {
                                 style={{ width: "54.8281px" }}
                               >
                                 Status
+                              </th>
+                               <th
+                                className="sorting"
+                                tabindex="0"
+                                aria-controls="DataTables_Table_0"
+                                rowspan="1"
+                                colspan="1"
+                                aria-label="Status: activate to sort column ascending"
+                                style={{ width: "54.8281px" }}
+                              >
+                                Payment Status
                               </th>
                               <th
                                 className="sorting"
@@ -170,9 +185,10 @@ export default function Appointments() {
                                   </a>
                                   <a href="#">{item.therapist.user.name}</a>
                                   <br/>
-                                  {/* <span>{item.therapist.profile_type}</span> */}
+                                 
                                 </h2>
                               </td>
+                              <td> {item.therapist.profile_type}</td>
                               
                               <td>
                                 <h2 className="table-avatar">
@@ -189,6 +205,7 @@ export default function Appointments() {
                                   <a href="">{item.client?.name}</a>
                                 </h2>
                               </td>
+                              
                               <td>
                                 {formatDate(item.booking_date)}{" "}
                                 <span className="text-success d-block">
@@ -196,19 +213,11 @@ export default function Appointments() {
                                 </span>
                               </td>
                               <td>
-                                <div className="status-toggle">
-                                  <input
-                                    type="checkbox"
-                                    id="status_2"
-                                    className="check"
-                                    checked=""
-                                  />
-                                  <label htmlFor="status_2" className="checktoggle">
-                                    checkbox
-                                  </label>
-                                </div>
+                                {item.status}
                               </td>
-                              <td></td>
+                              <td>
+                                <PaymentStatusWidget item={item} statusList={paymentStatus}/>
+                              </td>
                               <td>₹{item.transaction?.amount}</td>
                               
                             </tr>

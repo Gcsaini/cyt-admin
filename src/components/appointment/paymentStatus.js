@@ -7,13 +7,13 @@ const styles = {
     selectStyle: {
         lineHeight: "20px",
         height: "45x",
-        width:"250px"
+        width:"180px"
     },
 };
 export default function PaymentStatusWidget({ item, statusList }) {
     console.log("paymentt",item);
-    const [paymentStatus, setPaymentStatus] = React.useState(item.transaction.status._id);
-    const [loading, setLoading] = React.useState(false); // 👈 new state
+    const [paymentStatus, setPaymentStatus] = React.useState(item.transaction?.status?._id);
+    const [loading, setLoading] = React.useState(false);
 
 
     const handleStatusChange = async (e) => {
@@ -46,6 +46,7 @@ export default function PaymentStatusWidget({ item, statusList }) {
 
     return <div className="col-md-6 col-12 mb--20">
         <span style={{fontSize:"13px"}}>{item.transaction._id}</span>
+        <br/>
         <select
             style={styles.selectStyle}
             value={paymentStatus}
