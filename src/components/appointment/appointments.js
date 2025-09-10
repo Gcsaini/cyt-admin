@@ -216,9 +216,9 @@ export default function Appointments() {
                                 {item.status}
                               </td>
                               <td>
-                                <PaymentStatusWidget item={item} statusList={paymentStatus}/>
+                                {item.transaction && <PaymentStatusWidget item={item} statusList={paymentStatus}/>}
                               </td>
-                              <td>₹{item.transaction?.amount}</td>
+                              <td> {item.transaction && `₹${item.transaction?.amount}`}</td>
                               
                             </tr>
                             })}
